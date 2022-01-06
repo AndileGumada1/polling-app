@@ -1,7 +1,9 @@
 package com.andile.polls.models;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.NaturalId;
 
 
@@ -23,6 +25,8 @@ import java.util.Set;
 })
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 public class User extends DateAudit implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,4 +55,8 @@ public class User extends DateAudit implements Serializable {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
+
+    public User(String name, String username, String email, String password) {
+        super();
+    }
 }
