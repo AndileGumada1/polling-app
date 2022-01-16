@@ -1,5 +1,6 @@
 package com.andile.polls.models;
 
+import com.andile.polls.models.audit.DateAudit;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -58,5 +59,9 @@ public class User extends DateAudit implements Serializable {
 
     public User(String name, String username, String email, String password) {
         super();
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
     }
 }

@@ -24,7 +24,7 @@ public class UserPrincipal implements UserDetails {
     @JsonIgnore
     private String email;
 
-    @JsonIgnore
+//    @JsonIgnore
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 

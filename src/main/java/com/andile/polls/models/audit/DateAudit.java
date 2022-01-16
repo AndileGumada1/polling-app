@@ -1,4 +1,4 @@
-package com.andile.polls.models;
+package com.andile.polls.models.audit;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.CreatedDate;

@@ -20,6 +20,10 @@ public class JwtTokenProvider {
     @Value("${app.jwtExpirationInMs}")
     private String jwtExpirationInMs;
 
+    /**
+     * @param authentication
+     * @return
+     */
     public String generateToken(Authentication authentication) {
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
 
@@ -34,6 +38,10 @@ public class JwtTokenProvider {
                 .compact();
     }
 
+    /**
+     * @param token
+     * @return
+     */
     public Long getUserIdFromJWT(String token) {
 
         Claims claims = Jwts.parser()
@@ -42,6 +50,11 @@ public class JwtTokenProvider {
                 .getBody();
         return Long.parseLong(claims.getSubject());
     }
+
+    /**
+     * @param token
+     * @return
+     */
     public boolean validateToken(String token) {
         try {
             Jwts.parser()

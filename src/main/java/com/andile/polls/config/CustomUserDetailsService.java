@@ -19,6 +19,11 @@ public class CustomUserDetailsService implements UserDetailsService {
     UserRepository repository;
 
 
+    /**
+     * @param usernameOrEmail
+     * @return
+     * @throws UsernameNotFoundException
+     */
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
@@ -27,6 +32,11 @@ public class CustomUserDetailsService implements UserDetailsService {
                         new UsernameNotFoundException(""+usernameOrEmail));
         return UserPrincipal.create(user);
     }
+
+    /**
+     * @param id
+     * @return
+     */
     public UserDetails loadUserById(Long id){
         User user = repository.findById(id).orElseThrow(
                 () -> new UsernameNotFoundException("User not found with id"+ id)
