@@ -10,4 +10,6 @@ import java.util.Optional;
 @Repository
 public interface PollRepository extends JpaRepository<Poll, Long> {
     Optional<Poll> findByCreatedBy(Long userId, Pageable pageable);
+
+    long countByCreatedBy(Long id);
 }

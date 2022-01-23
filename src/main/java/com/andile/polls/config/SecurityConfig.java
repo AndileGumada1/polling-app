@@ -1,6 +1,8 @@
 package com.andile.polls.config;
 
 import com.andile.polls.security.JwtAuthenticationEntryPoint;
+import com.andile.polls.security.JwtAuthenticationFilter;
+import com.andile.polls.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

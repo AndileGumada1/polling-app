@@ -1,4 +1,4 @@
-package com.andile.polls.config;
+package com.andile.polls.service;
 
 import com.andile.polls.models.User;
 import com.andile.polls.repository.UserRepository;

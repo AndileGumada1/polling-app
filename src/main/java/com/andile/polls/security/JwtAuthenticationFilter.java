@@ -1,6 +1,6 @@
-package com.andile.polls.config;
+package com.andile.polls.security;
 
-import com.andile.polls.security.JwtTokenProvider;
+import com.andile.polls.service.CustomUserDetailsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
